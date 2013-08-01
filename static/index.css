@@ -1,0 +1,28 @@
+section {
+    width:70%;
+    float:left;
+}
+
+section h1 {
+    font-size: 25px;
+}
+
+article h1 {
+    font-size: 22px;
+    color: #111111;
+}
+
+article {
+    font-size: 16px;
+}
+
+aside {
+    float:right;
+    clear:none;
+    width:27%;
+    margin-top:35px;
+}
+
+aside h1 {
+    font-size:20px;
+}
