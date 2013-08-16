@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>David Flicker - Works on Robots (and other stuff)</title>
+<meta name="description" content="A blog on robots, microcontrollers, PCB's, control theory and other things that catch my fancy">
+<link rel="stylesheet" href="/static/normalize.css">
+<link rel="stylesheet" href="/static/base.css">
+<link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+ <header>
+   <a href="index.html">
+     <h1>David Flicker</h1>
+       Hacking on robots, PCBs, microcontrollers and control theory
+   </a>
+     <nav>
+       <ul>
+	 <a class="current" href="index.html"><li>Home</li></a>
+	 <a href="about.html"><li>About</li></a>
+	 <a href="resume.html"><li>Resume</li></a>
+	 <a href="projects.html"><li>Things I've made</li></a>
+	 <a $blog?$ href="blog.html"><li>Blog</li></a>
+       </ul>
+     </nav>
+ </header>
+ <!-- Insert other stuff you want here -->
+$body$
+</body>
+</html>

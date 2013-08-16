@@ -1,0 +1,8 @@
+<section class="postList">
+$for(posts)$
+<article>
+<a href="$url$"><h1>$title$</h1></a>
+$body$
+</article>
+$endfor$
+</section>
