@@ -16,7 +16,9 @@ main = hakyll $ do
     compile $ do
       let indexCtx = 
             field "posts" (\_ -> postList recentFirst) `mappend`
-            postCtx
+            constField "IndexCurrent" "class=\"current\"" `mappend`
+            constField "BlogCurrent" "" `mappend`
+            defaultContext
             
       getResourceBody
         >>= applyAsTemplate indexCtx
@@ -46,7 +48,7 @@ main = hakyll $ do
     compile $ do
       let blogCtx =
             field "posts" (\_ -> postList recentFirst) `mappend`
-            defaultContext
+            postCtx
             
       makeItem ""
         >>= loadAndApplyTemplate "templates/blog.html" blogCtx
@@ -57,6 +59,8 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     teaserField "teaser" "content" `mappend`
+    constField "BlogCurrent" "class=\"current\"" `mappend`
+    constField "IndexCurrent" "" `mappend`
     defaultContext
 
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
@@ -65,20 +69,3 @@ postList sortFilter = do
   itemTpl <- loadBody "templates/post-item.html"
   list <- applyTemplateList itemTpl postCtx posts
   return list
-  
--- teaserSeparator :: String
--- teaserSeparator = "<!--more-->"
-  
--- teaserField :: String           -- ^ Key to use
---             -> Snapshot         -- ^ Snapshot to load
---             -> Context String   -- ^ Resulting context
--- teaserField key snapshot = field key $ \item ->
---     (needlePrefix teaserSeparator . itemBody) <$>
---     loadSnapshot (itemIdentifier item) snapshot
-    
--- needlePrefix :: String -> String -> String
--- needlePrefix needle haystack = go haystack
---   where
---     go [] = []
---     go xss@(x:xs) | needle `isPrefixOf` xss = []
---                   | otherwise = x : go xs
