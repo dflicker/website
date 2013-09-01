@@ -90,8 +90,8 @@ myFeedConfiguration = FeedConfiguration
     }
     
 getTeaserContents :: [Item String] -> [Item String]
-getTeaserContents postContent = 
-  fmap (\x -> itemSetBody (fromMaybe (itemBody x) $ needlePrefix teaserSeparator $ itemBody x) x) postContent
+getTeaserContents = 
+  map $ \x -> itemSetBody (fromMaybe (itemBody x) $ needlePrefix teaserSeparator $ itemBody x) x
   
 teaserSeparator :: String
 teaserSeparator = "<!--more-->"
