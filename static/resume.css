@@ -1,0 +1,69 @@
+article h1 {
+    font-size:35px;
+}
+
+section {
+    margin-top: 30px;
+}
+
+section h1 {
+    float:left;
+    display:block;
+    clear:left;
+    width: 300px;
+    margin: 0;
+    font-size: 25px;
+}
+
+.desc {
+    margin: 0;
+}
+
+.desc p {
+    float:left;
+    clear:left;
+    margin: 0.1em 0 0.1em 0;
+}
+    
+
+.desc .resume-name {
+    margin-top: 9px;
+    margin-bottom:0.1em;
+}
+
+.desc .resume-time {
+    float:right;
+    clear:right;
+    margin-top:9px;
+    margin-bottom:0.1em;
+}
+
+.desc .first-desc {
+    margin-left:1em;
+}
+
+.desc .second-desc {
+    margin-left:2em;
+}
+
+.item {
+    margin-top: 9px;
+}
+
+.tools-set {
+    margin:0;
+    float:left;
+    clear:left;
+    width:40%;
+}
+
+.tools-elems {
+    margin:0;
+    float: right;
+    clear:right;
+    width: 50%;
+}
+
+article {
+    margin-bottom: 200px;
+}
