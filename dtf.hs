@@ -4,6 +4,7 @@ import Data.Monoid (mappend, (<>))
 import Control.Applicative ((<$>))
 import Data.List (isPrefixOf)
 import Hakyll
+import Data.Maybe (fromMaybe)
 
 main :: IO ()
 main = hakyll $ do
@@ -35,11 +36,12 @@ main = hakyll $ do
     
   match "posts/*" $ do
     route $ setExtension "html"
-    compile $ pandocCompiler
-        >>= saveSnapshot "content"
-        >>= loadAndApplyTemplate "templates/post.html" postCtx
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
-        >>= relativizeUrls
+    compile $ do 
+      pandocCompiler
+       >>= saveSnapshot "content"
+       >>= loadAndApplyTemplate "templates/post.html" postCtx
+       >>= loadAndApplyTemplate "templates/default.html" postCtx
+       >>= relativizeUrls
         
   match "templates/*" $ compile templateCompiler
   
@@ -55,6 +57,14 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/default.html" blogCtx
         >>= relativizeUrls
         
+  create ["atom.xml"] $ do
+    route idRoute
+    compile $ do
+      let feedCtx = postCtx `mappend`
+                    bodyField "description"
+      posts <- fmap (take 10) . recentFirst =<< (return . getTeaserContents) =<< loadAllSnapshots "posts/*" "content"
+      renderAtom myFeedConfiguration feedCtx posts
+        
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
@@ -69,3 +79,19 @@ postList sortFilter = do
   itemTpl <- loadBody "templates/post-item.html"
   list <- applyTemplateList itemTpl postCtx posts
   return list
+  
+myFeedConfiguration :: FeedConfiguration
+myFeedConfiguration = FeedConfiguration
+    { feedTitle       = "David Flicker: latest posts"
+    , feedDescription = "Posts on robotics, PCBs, microcontrollers and more"
+    , feedAuthorName  = "David Flicker"
+    , feedAuthorEmail = "dtflicker@gmail.com"
+    , feedRoot        = "http://www.davidflicker.com"
+    }
+    
+getTeaserContents :: [Item String] -> [Item String]
+getTeaserContents postContent = 
+  fmap (\x -> itemSetBody (fromMaybe (itemBody x) $ needlePrefix teaserSeparator $ itemBody x) x) postContent
+  
+teaserSeparator :: String
+teaserSeparator = "<!--more-->"
