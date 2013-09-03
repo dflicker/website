@@ -40,7 +40,7 @@ main = hakyll $ do
       pandocCompiler
        >>= saveSnapshot "content"
        >>= loadAndApplyTemplate "templates/post.html" postCtx
-       >>= loadAndApplyTemplate "templates/default.html" postCtx
+       >>= loadAndApplyTemplate "templates/blog-base.html" postCtx
        >>= relativizeUrls
         
   match "templates/*" $ compile templateCompiler
@@ -54,7 +54,7 @@ main = hakyll $ do
             
       makeItem ""
         >>= loadAndApplyTemplate "templates/blog.html" blogCtx
-        >>= loadAndApplyTemplate "templates/default.html" blogCtx
+        >>= loadAndApplyTemplate "templates/blog-base.html" blogCtx
         >>= relativizeUrls
         
   create ["atom.xml"] $ do
@@ -64,7 +64,8 @@ main = hakyll $ do
                     bodyField "description"
       posts <- fmap (take 10) . recentFirst =<< (return . getTeaserContents) =<< loadAllSnapshots "posts/*" "content"
       renderAtom myFeedConfiguration feedCtx posts
-        
+      
+-- Context for pages
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
@@ -73,13 +74,15 @@ postCtx =
     constField "IndexCurrent" "" `mappend`
     defaultContext
 
+-- Makes list of posts with base template applied
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
 postList sortFilter = do
   posts <- sortFilter =<< loadAll "posts/*"
   itemTpl <- loadBody "templates/post-item.html"
   list <- applyTemplateList itemTpl postCtx posts
   return list
-  
+
+-- Configuration for atom feed
 myFeedConfiguration :: FeedConfiguration
 myFeedConfiguration = FeedConfiguration
     { feedTitle       = "David Flicker: latest posts"
@@ -89,6 +92,7 @@ myFeedConfiguration = FeedConfiguration
     , feedRoot        = "http://www.davidflicker.com"
     }
     
+-- Gets the teaser from a list of posts
 getTeaserContents :: [Item String] -> [Item String]
 getTeaserContents = 
   map $ \x -> itemSetBody (fromMaybe (itemBody x) $ needlePrefix teaserSeparator $ itemBody x) x

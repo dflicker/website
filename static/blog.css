@@ -1,0 +1,28 @@
+section, article {
+    font-size: 20px;
+    text-align:center;
+    margin-top:20px;
+    width:600px;
+}
+
+section h1, article h1 {
+    font-size:30px;
+    margin: 20px auto 0px auto;
+}
+
+section p, article p {
+    line-height: 1.6;
+}
+
+section h2, article h2 {
+    font-size: 20px;
+    margin: 0px auto 5px auto;
+}
+
+@media only screen and (min-width: 950px) {
+    section, article {
+	width: 700px;
+	text-align: left;
+	font-size: 22px;
+    }
+}
