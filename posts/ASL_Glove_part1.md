@@ -8,9 +8,6 @@ TODO:
 
 get picture of prototype and us at the event
 
-check specs on a moduino
-
-
 Last June, I participated in the MAKE with MOTO event where a few Motorola 
 engineers and a van full of electronic parts stopped at Caltech. I joined 
 two other Caltech students (Justin Koch and Rob Anderson) and two Pasadena 
@@ -25,8 +22,8 @@ between deaf and hearing people.
 
 We managed to finish a proof of concept within that weekend which had 
 conductive pads on key regions of the hand and fingers and a huge wire 
-running from the glove to a Moduino (an arduino mounter to the back of a 
-\Motorla Razr). We managed to finish the hardware but we ran out of time 
+running from the glove to a Moduino (an Arduino DUE mounted to the back of a 
+Motorola RAZR MAXX HD). We managed to finish the hardware but we ran out of time 
 to actually complete the gesture recognition. The device also lacked 
 accelerometer/gyro/compass (motion sensor) which prevented us from picking 
 up actual gestures besides hand configurations. 
@@ -41,7 +38,6 @@ completely wireless and smarter. Here are my main component choices and why I
 picked them:
 
 1. Microcontroller: Atmel ATmega32U4
-
 I knew I wanted a microcontroller supported by the Arduino environment for 
 speed of implementation and the lovely reference schematics. I also wanted 
 one that could communicate with my computer at the same time as communicating 
@@ -56,3 +52,21 @@ computer but otherwise is a pretty standard atmel microcontroller.
 2. Bluetooth Module: RN-42
 I chose the RN-42 because it seemed easy to integrate (just connect TX, RX, 
 3V3, and GND). It has a built in antenna and is only 1" x 0.5" .
+
+3. Motion sensor: Invensense MPU-9150
+Combining 3 axis gryo, 3 axis accelerometer, and 3 axis compass into a 4mm by 4mm package,
+the MPU-9150 seems like a great choice for a first try. If we find we need something with
+more precision or more accuracy, then we can upgrade later. It has a nice and easy I2C 
+interface and runs of 3V3.
+
+4. Battery interface IC: TI BQ24075RGTT
+We are running the board off a 1 cell Li-ion battery so we need a part to charge it and 
+ideally automagically handle to choice between battery power and external power. The 
+BQ24075RGTT does both of these things AND boost regulates the output voltage to 5.5V to
+make the voltage conversion to 5V and 3V3 easy. This part also offers the ability to run 
+without a battery attached which will be nice for debugging and programming as all I will 
+need is a micro USB cable.
+
+I'm starting out with parts that are easy to develop on and heavily-used by the hobbyist 
+community to make it easy to get started. Part 2 will show the schematic and layout. Future
+topics include assembly, first boot-up, and initial code development.
