@@ -1,3 +1,13 @@
 article {
+    margin: 0 auto;
+    text-align: center;
     width: 70%;
+}
+
+
+@media only screen and (min-width: 950px) {
+    article {
+	text-align: left;
+	float: left;
+    }
 }

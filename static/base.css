@@ -1,3 +1,7 @@
+html  {
+    font-family: 'Open Sans', sans-serif;
+}
+
 div {
     overflow:hidden;
 }
@@ -14,6 +18,10 @@ a {
 
 a:hover {
     color: #ff0000;
+}
+
+article h1 > a {
+    text-decoration: none;
 }
 
 header {
@@ -84,8 +92,32 @@ article a {
     margin-bottom: 30px;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 950px) {
     body {
 	width: 900px;
+    }
+}
+
+@media only screen and (max-width: 949px) {
+    body {
+	width: 600px;
+    }
+    header > a {
+	text-align:center;
+	margin: 0 auto;
+	display:block;
+    }
+
+    nav {
+	margin: 20px auto 10px auto;
+	float: none;
+    }
+
+    nav ul {
+	text-align:center;
+	display:block;
+    }
+    header h1 {
+	margin-top:10px;
     }
 }

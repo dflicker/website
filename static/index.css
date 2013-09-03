@@ -1,6 +1,12 @@
 section {
-    width:70%;
-    float:left;
+    margin: 0 auto;
+    text-align:center;
+    width: 600px;
+}
+
+section p, article p {
+    line-height: 1.6;
+    font-size: 20px;
 }
 
 section h1 {
@@ -17,12 +23,26 @@ article {
 }
 
 aside {
-    float:right;
-    clear:none;
-    width:27%;
-    margin-top:35px;
+    display: none;
 }
 
 aside h1 {
     font-size:20px;
+}
+
+@media only screen and (min-width: 950px) {
+    section {
+	width: 70%;
+	float:left;
+	margin: auto;
+	text-align:left;
+    }
+
+    aside {
+	float:right;
+	clear:none;
+	width:27%;
+	margin-top:35px;
+	display:block;
+    }
 }

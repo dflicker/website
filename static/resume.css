@@ -1,69 +1,120 @@
+article {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 50px auto;
+}
+
 article h1 {
-    font-size:35px;
+    font-size: 35px;
 }
 
 section {
     margin-top: 30px;
+    padding-bottom:5px;
+}
+
+section > p {
+    margin:0 auto;
+    font-size:25px;
+    text-align:center;
 }
 
 section h1 {
-    float:left;
-    display:block;
-    clear:left;
-    width: 300px;
-    margin: 0;
-    font-size: 25px;
+    font-size:25px;
 }
 
 .desc {
     margin: 0;
-}
-
-.desc p {
-    float:left;
-    clear:left;
-    margin: 0.1em 0 0.1em 0;
+    margin-bottom: 20px;
+    
 }
     
-
-.desc .resume-name {
-    margin-top: 9px;
-    margin-bottom:0.1em;
+.desc p {
+    margin: 0.1em 0 0.1em 0;
 }
 
-.desc .resume-time {
-    float:right;
-    clear:right;
-    margin-top:9px;
-    margin-bottom:0.1em;
+.sectionBottom {
+    width: 40%;
+    border-bottom: 2px solid rgb(150, 150, 255);
+    margin: 15px auto 0px auto;
 }
 
-.desc .first-desc {
-    margin-left:1em;
+section:last-child  .sectionBottom {
+    border-bottom: 0;
+}
+    
+.resume-name > strong {
+    font-size: 20px;
 }
 
-.desc .second-desc {
-    margin-left:2em;
-}
+@media only screen and (min-width: 950px) {
+    article {
+	text-align:left;
+	width: auto;
+    }
 
-.item {
-    margin-top: 9px;
-}
+    section h1 {
+	float:left;
+	display:block;
+	clear:left;
+	width: 20%;
+	margin: 0;
+	font-size: 22px;
+	margin-right: 3%;
+    }
+    
+    .desc p {
+	float:left;
+	clear:left;
+    }
+    
+    .sectionBottom {
+	display:none;
+    }
+    
+    .desc .resume-name {
+	margin-top: 9px;
+	margin-bottom:0.1em;
+    }
 
-.tools-set {
-    margin:0;
-    float:left;
-    clear:left;
-    width:40%;
-}
-
-.tools-elems {
-    margin:0;
-    float: right;
-    clear:right;
-    width: 50%;
-}
-
-article {
-    margin-bottom: 200px;
+    .resume-name > strong {
+	font-size: 16px;
+    }
+    
+    .desc .resume-time {
+	float:right;
+	clear:right;
+	margin-top:9px;
+	margin-bottom:0.1em;
+    }
+    
+    .desc .first-desc {
+	margin-left:1em;
+    }
+    
+    .desc .second-desc {
+	margin-left:2em;
+    }
+    
+    .item {
+	margin-top: 9px;
+    }
+    
+    .tools-set {
+	margin:0;
+	float:left;
+	clear:left;
+	width:40%;
+    }
+    
+    .tools-elems {
+	margin:0;
+	float: right;
+	clear:right;
+	width: 50%;
+    }
+    
+    article {
+	margin-bottom: 200px;
+    }
 }
