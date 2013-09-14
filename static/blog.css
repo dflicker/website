@@ -2,7 +2,6 @@ section, article {
     font-size: 20px;
     text-align:center;
     margin-top:20px;
-    width:600px;
 }
 
 section h1, article h1 {
@@ -10,16 +9,21 @@ section h1, article h1 {
     margin: 20px auto 0px auto;
 }
 
-section p, article p {
-    line-height: 1.6;
-}
-
 section h2, article h2 {
     font-size: 20px;
     margin: 0px auto 5px auto;
+    font-weight:400;
 }
 
-@media only screen and (min-width: 950px) {
+.blogPost > p {
+    margin-bottom:5px;
+}
+
+img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 760px) {
     section, article {
 	width: 700px;
 	text-align: left;

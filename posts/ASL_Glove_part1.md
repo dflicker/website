@@ -3,11 +3,6 @@ title: Designing a wireless gesture recognition glove, part 1
 published: 2013-08-31
 ---
 
-
-TODO:
-
-get picture of prototype and us at the event
-
 Last June, I participated in the MAKE with MOTO event where a few Motorola 
 engineers and a van full of electronic parts stopped at Caltech. I joined 
 two other Caltech students (Justin Koch and Rob Anderson) and two Pasadena 
@@ -16,9 +11,7 @@ crazy design and finish a prototype for it within 48 hours. We came up with
 an American Sign Language (ASL) glove. A glove that could recognize ASL 
 gestures and translate to text/speech/whatever in close to real time on a 
 smartphone. We think that such a device could allow for better communication 
-between deaf and hearing people. 
-
-<!--more-->
+between deaf and hearing people. <!--more-->
 
 We managed to finish a proof of concept within that weekend which had 
 conductive pads on key regions of the hand and fingers and a huge wire 
@@ -68,5 +61,5 @@ without a battery attached which will be nice for debugging and programming as a
 need is a micro USB cable.
 
 I'm starting out with parts that are easy to develop on and heavily-used by the hobbyist 
-community to make it easy to get started. Part 2 will show the schematic and layout. Future
+community to make it easy to get started. [Part 2](/posts/ASL_Glove_part2.html) will show the schematic. Future
 topics include assembly, first boot-up, and initial code development.

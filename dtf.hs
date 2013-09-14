@@ -12,6 +12,10 @@ main = hakyll $ do
     route   idRoute
     compile copyFileCompiler
     
+  match "images/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
   match "index.html" $ do
     route idRoute
     compile $ do
@@ -25,12 +29,20 @@ main = hakyll $ do
         >>= applyAsTemplate indexCtx
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls
+    
+  match "projects.html" $ do
+    route idRoute
+    compile copyFileCompiler
       
   match "about.html" $ do
-    route   idRoute
+    route  idRoute
     compile copyFileCompiler
     
   match "resume.html" $ do
+    route idRoute
+    compile copyFileCompiler
+    
+  match "robots.txt" $ do
     route idRoute
     compile copyFileCompiler
     

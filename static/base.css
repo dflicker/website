@@ -2,6 +2,11 @@ html  {
     font-family: 'Open Sans', sans-serif;
 }
 
+section p, article p {
+    line-height: 1.6;
+    font-size: 20px;
+}
+
 div {
     overflow:hidden;
 }
@@ -10,6 +15,7 @@ body {
     margin: auto;
     color: rgb(20, 20, 20);
     background: rgb(253, 253, 253);
+    padding-bottom: 40px;
 }
 
 a {
@@ -92,15 +98,27 @@ article a {
     margin-bottom: 30px;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 1224px) {
     body {
 	width: 900px;
     }
 }
 
-@media only screen and (max-width: 949px) {
+@media only screen and (max-width: 519px) {
     body {
-	width: 600px;
+	width: 100%;
+    }
+
+    article p, section p {
+	text-align:center;
+    }
+
+    article h1, section h1 {
+	text-align: center;
+    }
+
+    body section {
+	width:100%;
     }
     header > a {
 	text-align:center;
@@ -108,8 +126,13 @@ article a {
 	display:block;
     }
 
+    article {
+	width: 90%;
+	margin: 0 auto;
+    }
+
     nav {
-	margin: 20px auto 10px auto;
+	margin: 20px auto 20px auto;
 	float: none;
     }
 

@@ -4,11 +4,6 @@ section {
     width: 600px;
 }
 
-section p, article p {
-    line-height: 1.6;
-    font-size: 20px;
-}
-
 section h1 {
     font-size: 25px;
 }
@@ -30,7 +25,7 @@ aside h1 {
     font-size:20px;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 1224px) {
     section {
 	width: 70%;
 	float:left;

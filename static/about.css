@@ -1,11 +1,20 @@
 article {
-    margin: 0 auto;
     text-align: center;
     width: 70%;
 }
 
+article > h1 {
+    font-size:25px;
+}
 
-@media only screen and (min-width: 950px) {
+@media only screen and (max-width: 519px) {
+    article {
+	width:90%;
+    }
+}
+
+
+@media only screen and (min-width: 1224px) and (min-device-width: 1224px) {
     article {
 	text-align: left;
 	float: left;
