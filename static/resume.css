@@ -47,9 +47,13 @@ section:last-child  .sectionBottom {
     font-size: 20px;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 960px) {
     article {
 	text-align:left;
+	width: auto;
+    }
+
+    section {
 	width: auto;
     }
 

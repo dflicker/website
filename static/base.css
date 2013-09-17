@@ -98,13 +98,22 @@ article a {
     margin-bottom: 30px;
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 960px) {
     body {
 	width: 900px;
     }
+    article, section {
+	width: 700px;
+    }
 }
 
-@media only screen and (max-width: 519px) {
+@media only screen and (min-width: 760px) and (max-width: 959px) {
+    body {
+	width: 720px;
+    }
+}
+
+@media only screen and (max-width: 759px) {
     body {
 	width: 100%;
     }

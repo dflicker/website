@@ -7,14 +7,14 @@ article > h1 {
     font-size:25px;
 }
 
-@media only screen and (max-width: 519px) {
+@media only screen and (max-width: 759px) {
     article {
 	width:90%;
     }
 }
 
 
-@media only screen and (min-width: 1224px) and (min-device-width: 1224px) {
+@media only screen and (min-width: 760px) {
     article {
 	text-align: left;
 	float: left;
