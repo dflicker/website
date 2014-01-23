@@ -1,3 +1,3 @@
 #! /bin/sh
 
-ghc dtf.hs && ./dtf rebuild && ./dtf preview
+ghc -O3 -Wall -o dtf dtf.hs && ./dtf rebuild && ./dtf watch

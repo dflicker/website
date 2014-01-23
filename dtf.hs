@@ -1,8 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Data.Monoid (mappend, (<>))
-import Control.Applicative ((<$>))
-import Data.List (isPrefixOf)
+import Data.Monoid (mappend)
 import Hakyll
 import Data.Maybe (fromMaybe)
 

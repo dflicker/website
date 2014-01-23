@@ -38,4 +38,4 @@ Power
 
 I'm using a TI BQ24075 to manage a 1-cell LiPo battery including automatically switching between charging and discharging based on the state of the cell and the input power. There's a small terminal block for the battery input and two LEDs for indication. The BQ24075 has a built-in boost regulator which converts the input (either battery or USB) to a constant 5.5V output which makes voltage management a snap. There are two small LDO linear regulators on board, one for dropping 5V to 3V3 and one to drop 5.5V from the battery-management IC to 5V for the microcontroller. These have a few input and output bypass caps.
 
-After schematic capture comes layout and in the next part, I'll discuss my process for layout and component selection.
+After schematic capture comes layout and in [part 3](/posts/ASL_Glove_part3.html), I'll discuss my process for layout and component selection.
