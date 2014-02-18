@@ -29,7 +29,11 @@ are always off during power up.
 
 Here's what the schematics look like:
 
-<INSERT SCHEMATICS HERE>
+<a href="/images/DrinkMachineRev1-SCH.png">
+
+![Schematics](/images/DrinkMachineRev1-SCH.png)\
+
+</a>
 
 Chip Selection
 ==============
@@ -54,7 +58,11 @@ Layout was very straight forward. There's a row on the
 elements in the middle, and the 11 pin GPIO connector
 on the south side. 
 
-<INSERT LAYOUT HERE>
+<a href="/images/DrinkMachineRev1-PCB.png">
+
+![Layout](/images/DrinkMachineRev1-PCB.png)\
+
+</a>
 
 Now I'm just waiting for the parts to come in to
 check that the footprints to match the board and then

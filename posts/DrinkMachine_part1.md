@@ -33,7 +33,7 @@ solenoid and a flyback diode across the solenoid to prevent inductive
 voltage spikes when the solenoid is disconnected. Here's a schematic
 of the control circuit for one solenoid.
 
-<INSERT SCHEMATIC HERE>
+<img src="/images/DrinkMachine-Control.png" alt="Control Circuit" style="width: 300px;"/>
 
 The 10K pulldown resistor makes sure MOSFET is off during power up.
 
@@ -90,8 +90,6 @@ First Implementation
 Here's what the first working demo looked like
 
 ![Demo](/images/DrinkMachineDemo.jpg)\
-
-<INSERT LINKS TO ORDER AND COMPLETE PAGES>
 
 Next Steps
 ==========
